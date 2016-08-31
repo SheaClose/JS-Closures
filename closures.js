@@ -175,9 +175,15 @@ timeOutCounter();
 // //////////////////PROBLEM 8////////////////////
 
 var funcArray = [];
-
-/*
-  Make the following code work
+for (var i = 0; i < 6; i++) {
+  var closure = funcMaker(i);
+  funcArray.push(closure);
+}
+function funcMaker(num) {
+  return function () {
+    return num;
+  }
+}
 
   funcArray[0]() //0
   funcArray[1]() //1
@@ -185,6 +191,3 @@ var funcArray = [];
   funcArray[3]() //3
   funcArray[4]() //4
   funcArray[5]() //5
-
-  *Hint: Don't let this fool you. Break down what's really happening here.
-*/
